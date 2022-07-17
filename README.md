@@ -1,2 +1,2 @@
-# nodebackend-ModularCXProject-repo
+#ModularCX Project Backend
 Backend of the project
