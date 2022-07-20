@@ -3,10 +3,13 @@
  */
 const express = require("express");
 const env = require("dotenv").config({path: './.env'});
-const docs = require("./dao/docsdao")
+const blogs = require("./dao/blogsdao");
+const login = require("./dao/logindao");
+const register = require("./dao/registerdao");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require('cors');
+const currentport = process.env.PORT || 5000;
 
 /*
  *connecting to our Mongo Database
@@ -20,12 +23,15 @@ app.use(cors());
 //used to parse json 
 app.use(express.json());
 //used to access data access object (DAO)
-app.use("/api",docs);
+app.use("/api/blogs",blogs);
+app.use("/api/login",login);
+app.use("/api/register",register);
 
 
 /*
  *setting port for our backend to run on
  */
-app.listen(process.env.PORT, () => {
+app.listen(currentport, () => {
     console.log("Backend server is ON!");
+    console.log(`Listening on port: ${currentport}`);
 });
