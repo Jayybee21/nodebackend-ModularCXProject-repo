@@ -17,7 +17,7 @@ After running the project, the backend will automatically
 manage all of the API calls the frontend project will 
 need to run properly
 
-#Additionnal information:
+# Additionnal information:
 -the project is set to run on the port 5000
 -All API calls are present in the DAO folder
 -Models of the database are present in the Models folder
